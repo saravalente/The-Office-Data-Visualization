@@ -1,0 +1,77 @@
+body {
+    background-color: #ece1be;
+    font-family: 'Gudea', sans-serif;
+}
+
+circle:hover {
+    opacity: .6;
+    cursor: pointer;
+    fill: #00c227;
+    r: 4.5;
+}
+
+rect {
+    opacity: .6;
+}
+
+rect:hover {
+    opacity: 1;
+    stroke-width:2;
+    stroke: white;
+}
+
+.d3-tip {
+    line-height: 1;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.line {
+    stroke: black;
+    fill: none;
+    stroke-width: 1px;
+}
+
+.wrapper {
+    text-align: center;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart {
+    margin: 0 auto;
+}
+
+.wrapper p {
+    text-align: left;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-family: 'Gentium Plus', serif;
+    font-weight: 700;
+}
+
+h5 {
+    font-family: 'Gentium Plus', serif;
+    font-weight: 700;
+}
+
+.analysis {
+    font-size: medium;
+    text-align: center;
+    margin: auto;
+}
+
+.chosenBar{
+    opacity: 1;
+}
+
+.chosenCirc{
+    fill: red;
+    r: 4.5;
+}
