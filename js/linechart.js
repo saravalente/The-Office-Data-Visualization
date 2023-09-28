@@ -36,9 +36,12 @@ LineVis.prototype.initVis = function(){
         vis.height = vis.innerheight;
 
     // SVG drawing area
-    vis.svg = d3.select("#" + vis.parentElement).append("svg")
-        .attr("width", vis.width + vis.margin.left + vis.margin.right)
-        .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+    vis.svg = d3.select("#" + vis.parentElement).classed("svg-container", true)
+        .append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 700 450")
+        //class to make it responsive
+        .classed("svg-content-responsive", true)
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 

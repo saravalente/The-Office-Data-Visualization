@@ -35,9 +35,11 @@ PercentVis.prototype.initVis = function(){
         vis.height = vis.innerheight;
 
     // SVG drawing area
-    vis.svg = d3.select("#" + vis.parentElement).append("svg")
-        .attr("width", vis.width + vis.margin.left + vis.margin.right)
-        .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+    vis.svg = d3.select("#" + vis.parentElement).classed("svg-container-2", true)
+        .append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 400 1000")
+        .classed("svg-content-responsive", true)
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")")
         .attr("class", "g-box");
@@ -60,8 +62,10 @@ PercentVis.prototype.initVis = function(){
         .range([vis.margin.top, vis.height - vis.margin.bottom])
         .padding(0.1);
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+    function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function(txt){
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
     }
 
     /* Initialize tooltip */
@@ -73,7 +77,7 @@ PercentVis.prototype.initVis = function(){
             var thisSeason = i.data.season;
             var thisEpisode = i.data.episode;
             var thisPercent = (i[1]-i[0]) * 100;
-            return capitalizeFirstLetter(thisSpeaker) + ": " + thisPercent.toFixed(1) + "% of lines<br>S" + thisSeason + "E" + thisEpisode;
+            return toTitleCase(thisSpeaker) + ": " + thisPercent.toFixed(1) + "% of lines<br>S" + thisSeason + "E" + thisEpisode;
         });
 
     vis.svg.call(vis.tip)
