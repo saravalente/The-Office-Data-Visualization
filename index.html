@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Gentium+Plus:wght@400;700&family=Gudea&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <div class="container wrapper">
+        <h2>The Office: Data Exploration</h2>
+        <div class = "row analysis">
+        </div>
+        <div class="row justify-content-center">
+            <div class = "col-md-7">
+                <h5></h5>
+                    <p>The line graph visualizes IMDB rating by episode in <i><a href="https://en.wikipedia.org/wiki/The_Office_(American_TV_series)">The Office</a></i>.
+                        Use the drop-down menu to filter by season. Hover over a point for more episode info. Click a point to see which characters spoke the most lines during that episode (shown in the corresponding bar chart).</p>
+                <div class="row justify-content-center">
+                    <div class = "col-md-3">
+                    <label for="season-filter">Season:</label>
+                    <select class="form-control" id="season-filter" onchange="seasonChanged()">
+                        <option value="0">All</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+</div></div>
+                <div id="linechartvis"></div>
+            </div>
+            <div class="col-md-5">
+                <h5></h5>
+                <div id="percentchartvis"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class = "col-6">
+
+            </div>
+            <div class="col-4">
+
+            </div>
+        </div>
+    </div>
+<!--OS JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3-interpolate-path.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+
+
+    <!--My JS-->
+    <script src="js/main.js"></script>
+    <script src="js/linechart.js"></script>
+    <script src="js/percentchart.js"></script>
+</body>
+</html>
